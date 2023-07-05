@@ -1,13 +1,11 @@
 import { model } from "./model"
-import {templates} from "./templates"
+import { Site } from './classes/site'
+import { Sidebar } from "./classes/sidebar"
 import './styles/main.css'
 
-const site = document.querySelector('#site')
 
-model.forEach(block => {
-    const toHTML = templates[block.type]
+const site = new Site('#site')
 
-    if (toHTML) {
-        site.insertAdjacentHTML('beforeend', toHTML(block))
-    }
-})
+site.render(model)
+
+const sidebar = new Sidebar('#panel')

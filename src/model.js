@@ -1,12 +1,12 @@
 import image from './assets/image.png'
-import { Block } from './classes/blocks'
+import {TextBlock, TitleBlock, ColumnsBlock, ImageBlock} from './classes/blocks'
 
 const text = `
 Круті відео та уроки з JavaScript тут: <a href="https://youtube.com/c/VladilenMinin" target="_blank">Владилен Мінін</a>. Тут ти знайдеш вичерпну інформацію з будь-яких аспектів мови, будь-яких фреймворків, таких як: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt та багато іншого. Приєднуйся!
 `
 
 export const model = [
-    new Block('title', 'Конструктор сайтів на JavaScript', {
+    new TitleBlock('Конструктор сайтів на JavaScript', {
         tag: 'h2',
         styles: {
             background: 'linear-gradient(to right, #ff0099, #493240)',
@@ -15,7 +15,7 @@ export const model = [
             'text-align': 'center'
         }
     }),
-    new Block('image', image, {
+    new ImageBlock(image, {
         styles: {
             padding: '2rem 0',
             display: 'flex',
@@ -27,7 +27,7 @@ export const model = [
         },
         alt: 'Це картинка'
     }),
-    new Block('columns', [
+    new ColumnsBlock([
         'Додаток на JavaScript, без використання бібліотек',
         'Дізнатись як працюють принципи SOLID і ООП в JavaScript за один курс',
         'JavaScript - це просто, цікаво. Навчись створювати будь-які UI своїми руками'
@@ -39,7 +39,7 @@ export const model = [
                 'font-weight': 'bold'
             }
         }),
-        new Block('text', text, {
+    new TextBlock(text, {
             styles: {
                 background: 'linear-gradient(to left, #f2994a, #f2c94c)',
                 padding: '1rem',
